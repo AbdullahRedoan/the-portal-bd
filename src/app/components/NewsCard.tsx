@@ -2,10 +2,10 @@ import { INews } from "@/app/types/type";
 import Image from "next/image";
 import React from "react";
 
-const FirstNewsCard = ({news} : {news: INews}) => {
-    console.log(news);
-    const { title, description, imageUrl, imageAlt, category, lastPublished } = news;
-    
+const NewsCard = ({ news }: { news: INews }) => {
+  const { title, description, imageUrl, imageAlt, category, lastPublished } =
+    news;
+
   return (
     <article className="max-w-md w-full bg-white rounded-lg border border-gray-200/80 shadow-sm overflow-hidden font-sans">
       <div className="relative w-full h-64 bg-gray-100 overflow-hidden">
@@ -19,11 +19,9 @@ const FirstNewsCard = ({news} : {news: INews}) => {
       </div>
 
       <div className="p-5 flex flex-col gap-3">
-
         <span className="text-xs font-semibold text-red-700 tracking-wide uppercase">
           {category}
         </span>
-
 
         <h2 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug hover:text-red-700 transition-colors cursor-pointer">
           {title}
@@ -43,4 +41,4 @@ const FirstNewsCard = ({news} : {news: INews}) => {
   );
 };
 
-export default FirstNewsCard;
+export default NewsCard;
