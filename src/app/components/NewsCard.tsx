@@ -1,5 +1,6 @@
 import { INews } from "@/app/types/type";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const NewsCard = ({ news }: { news: INews }) => {
@@ -7,7 +8,8 @@ const NewsCard = ({ news }: { news: INews }) => {
     news;
 
   return (
-    <article className="max-w-md w-full bg-white rounded-lg border border-gray-200/80 shadow-sm overflow-hidden font-sans">
+    <Link href={`/news/${news.id}`} className="group block">
+        <article className="max-w-md w-full bg-white rounded-lg border border-gray-200/80 shadow-sm overflow-hidden font-sans">
       <div className="relative w-full h-64 bg-gray-100 overflow-hidden">
         <Image
           src={imageUrl}
@@ -38,6 +40,7 @@ const NewsCard = ({ news }: { news: INews }) => {
         </time>
       </div>
     </article>
+    </Link>
   );
 };
 
